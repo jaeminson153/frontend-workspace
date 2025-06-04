@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_017_select</title>
+</head>
+
+<body>
+
+    <!--
+      submit을 클릭을 하면 action속성의 값에 있는 페이지를 서버에 요청을 하면서
+      클라이언트가 입력한 아이디와 비밀번호를 넘겨준다.
+      method=get방식으로 요청을 하면  주소표시줄에 아이디와 비밀번호가 노출이 된다.
+       fname=minyoung&fpass=256  
+        name속성값=value속성값
+-->
+
+    <form action="#" method="get">
+        <select name="subject" id="subject">
+            <option value="java">Java</option>
+            <option value="jsp" selected="selected">Jsp</option>
+            <option value="html5">Html5</option>
+            <option value="jquery">Jquery</option>
+        </select>
+        <input type="submit" value="commit" />
+    </form>
+
+    <form action="#" method="get">
+        <select name="subgroup" id="subgroup">
+            <optgroup label="backend">
+                <option value="java">Java</option>
+                <option value="jsp">Jsp</option>
+                <option value="spring">Spring</option>
+            </optgroup>
+            <optgroup label="frontend">
+                <option value="html">Html</option>
+                <option value="css">Css</option>
+                <option value="js">Javascript</option>
+            </optgroup>
+            <optgroup label="database">
+                <option value="oracle">Oracle</option>
+                <option value="mysql">Mysql</option>
+                <option value="mssql">MSsql</option>
+            </optgroup>
+
+        </select>
+        <input type="submit" value="commit" />
+    </form>
+
+
+</body>
+
+</html>

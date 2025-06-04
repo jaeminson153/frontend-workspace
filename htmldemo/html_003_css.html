@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_003_css</title>
+    <link rel="stylesheet" href="./style/outer.css">
+    <style>
+        .one{
+            background-color: red;
+        }
+        /*
+            css 우선순위
+            1. inline style
+            2. internal style
+            3. external style
+        */
+    </style>
+</head>
+<body>
+    
+    <div class="one">internal style</div>
+    <div id="two">external style</div>   
+    <div style="color:aqua">inline style</div> 
+
+</body>
+</html>
