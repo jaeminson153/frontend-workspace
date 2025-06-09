@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js003_variable</title>
+</head>
+
+<body>
+    <script>
+        //변수 : 변하는 데이터를 지정할 수 있는 메모리 공간이다.
+        // var let const 
+        console.log(3);
+        console.log(3);
+
+        let data = 3;
+        console.log(data);
+        console.log("data:%d", data);
+
+        let s = "js";
+        let f = 4.56;
+        console.log("s:%s, f:%f", s, f);
+        //https://developer.mozilla.org/ko/docs/Web/API/console#%EC%98%88%EC%A0%9C
+        // 크로, 엣지는 숫자 서식을 지원하지 않는다.
+        console.log("f:%.2f", f);
+
+        // %b 도 인식 안된다. %s 대처 되어야 한다.
+        let b = true;
+        console.log("b:%b", b);
+
+        //템플릿 문자열  `(백틱) 로 묶어주어야 한다.
+        console.log(`data:${data} s:${s}  f:${f}  b:${b}`);
+
+        let d = null;
+        console.log(`d=${d}`);
+
+        let dd;
+        console.log(`dd=${dd}`);
+
+
+        //js003_variable.html:38 Uncaught ReferenceError: e is not defined
+        console.log(`e=${e}`);
+
+    </script>
+</body>
+
+</html>
