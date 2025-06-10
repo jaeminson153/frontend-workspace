@@ -89,6 +89,123 @@
         console.log(call2); //(a) => a
         console.log(call2(3)); //3
 
+        /////////////////////////////////////////////////
+        // 중첩함수
+        function outer(a, b) {
+            let result = inner(a, b);
+            function inner(a, b) {
+                return a + b;
+            }
+
+            return result;
+        }
+
+        console.log(outer(10, 3));  //13
+
+        /////////////////////////////////////////////////
+        // 콜백함수
+        // 1. 다른 함수의 인수로 사용되는 함수
+        // 2. 어떤 이벤트에 의해 호출되는 함수 : btn.onclick = function(){}
+        function callback(a, b) {
+            return a + b;
+        }
+
+        function getNumber(callFunc) {
+            console.log(`==: ${callFunc}`);
+            let result = callFunc(1, 6);
+            return result;
+        }
+
+        console.log(getNumber(callback));
+        console.log(callback(3));
+        console.log("====================================");
+        ///////////////////////////////////////////////////////////////////
+        //클로저(closure)
+        /*
+        1)중첩함수는 outer(외부)함수가 끝나면 외부에서 outer(외부)함수의 자원을 사용할 수 없다.
+        2)클로저는 outer(외부) 함수보다 중첩 함수가 더 오래 유지되는 경우 중첩 함수는 이미 생명주기가 종료한
+            외부함수의 변수를 참조할 수 있다. 이러한 중첩함수가 클로저(closure)이다.
+        3)클로저는 변수가 의도치 않게 변경되지 않도록 안전하게 은닉(information hiding)하고 특정 함수에게만
+            상태 변경을 허용하여 상태를 안전하게 변경하고 유지하기 위해 사용한다.
+        */
+
+        function outerFunc() {
+            let sum = 50;
+            function innerFunc(a) {
+                return sum + a;
+            }
+
+            return innerFunc;
+        }
+
+        let outerCall = outerFunc();
+        console.log(outerCall);
+        console.log(outerCall(10));
+
+        /////////////////////////////////////////////////////////
+        // 함수 파라미터
+        function display(a, b) {
+            console.log(`a=${a} b=${b}`);
+        }
+
+        display();
+        display(1);
+        display(1, 2);
+        display(1, 2, 3, 4);
+
+        function display2(a = 0, b = 0) {
+            console.log(`a=${a} b=${b}`);
+        }
+
+        display2();
+        display2(1);
+        display2(1, 2);
+        display2(1, 2, 3, 4);
+
+
+        //2. 나머지 파라미터(Rest Parameter) : ES6-2015
+        // - 파라미터 갯수를 가변으로 사용할 수 있도록 제공해주는 연산자이다.
+        // - spread operator(점 3개(...))를 맨 마지막 파라미터로 사용해주면 된다.
+        // java 에서는 가변 매개변수  배열을 의미하고 있다.
+        console.log("=================================");
+        function display3(...args) {
+            console.log(args);
+            console.log(typeof args, args instanceof Array);
+        }
+
+        display3();
+        display3(1);
+        display3(1, 2);
+        display3(1, 2, 3, 4, "ko");
+
+        function display4(num = 0, ...args) {
+            console.log(num);
+            console.log(args);
+        }
+
+        display4();
+        display4(1);
+        display4(1, 2);
+        display4(1, 2, 3, 4, "ko");
+
+        //////////////////////////////////////////////
+        // arquments 객체   유사배열임. 배열은 아님.  callee  는 이 매개변수를 호출한 함수.
+        function display5() {
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(typeof arguments, arguments instanceof Array, arguments.callee);
+                console.log(arguments[i]);
+            }
+
+        }
+
+        display5(1, 2, 3, 4, 5);
+        // display5(1);
+        // display5(1, 2);
+        // display5(1, 2, 3, 4, "ko");
+
+
+
 
     </script>
 </body>
