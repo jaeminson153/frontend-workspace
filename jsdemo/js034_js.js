@@ -11,7 +11,7 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 
 let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 let result = arr.filter(a => a);
-let sum = result.reduce((total, element) => total + element);
+let sum = result.reduce((a, b) => a + b);
 
 console.log(`합계: ${sum}`);
 console.log(`평균: ${sum / result.length}`);
@@ -38,14 +38,14 @@ for (let i = 0; i < exam.length; i++) {
     let fullname, jumsu;
     [fullname, ...jumsu] = exam[i];
     let sum = jumsu.reduce((a, b) => a + b);
-    exam[i].push(sum);
     let avg = (sum / jumsu.length).toFixed(2);
+    exam[i].push(sum);
     exam[i].push(avg);
 }
 
 console.log(exam);
 
-let lastEle = exam.map(a => a[a.length - 1]);
+let tops = exam.map(a => a[a.length - 1]);
+console.log(tops);
 
-console.log(lastEle);
-console.log(`최고점: ${Math.max(...lastEle)}`);
+console.log(`최고점수는 ${Math.max(...tops)} 입니다.`);
