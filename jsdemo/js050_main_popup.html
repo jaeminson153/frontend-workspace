@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#popup {
+            width: 301px;
+            height: 351px;
+            border: 1px solid black;
+            position: fixed;
+            left: 30%;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            이재명 대통령은 11일 대통령실 직원이 근무 중 과로로 쓰러져 병원으로 이송된 것과 관련, “안타까움과 더불어 무거운 책임감을 느낀다”고 했다.
+
+            이 대통령은 이날 자신의 페이스북을 통해 “조금 전 대통령실 직원이 과로로 쓰러졌다는 소식을 접했다”며 “맡은 일은 걱정 말고, 건강 회복에만 집중해 주었으면 한다”고 했다.
+
+            이 대통령은 “국민의 공복으로서 우리에게 주어진 사명도 중요하지만, 무엇보다 중요한 것은 여러분의 건강과 안전이다. 부디 스스로를 먼저 돌봐주시길 간곡히 당부드린다”며 “대통령 혼자서는 결코
+            성과를 낼 수
+            없다.
+            공직자 여러분께서 한마음으로 협력하고 힘을 합쳐주셔야 국민을 위한 더 나은 미래를 만들어갈 수 있다”고 했다.
+            이재명 대통령은 11일 대통령실 직원이 근무 중 과로로 쓰러져 병원으로 이송된 것과 관련, “안타까움과 더불어 무거운 책임감을 느낀다”고 했다.
+
+            이 대통령은 이날 자신의 페이스북을 통해 “조금 전 대통령실 직원이 과로로 쓰러졌다는 소식을 접했다”며 “맡은 일은 걱정 말고, 건강 회복에만 집중해 주었으면 한다”고 했다.
+
+            이 대통령은 “국민의 공복으로서 우리에게 주어진 사명도 중요하지만, 무엇보다 중요한 것은 여러분의 건강과 안전이다. 부디 스스로를 먼저 돌봐주시길 간곡히 당부드린다”며 “대통령 혼자서는 결코
+            성과를 낼 수
+            없다.
+            공직자 여러분께서 한마음으로 협력하고 힘을 합쳐주셔야 국민을 위한 더 나은 미래를 만들어갈 수 있다”고 했다.
+        </p>
+        <div id="popup">
+            <img src="images/popup.jpg" usemap="#pop" />
+
+            <map name="pop" id="pop">
+                <!--coors='x start, y start, x end, y end'-->
+                <area shape="rect" coords="255,332,290,345" href="#" alt="창닫기" />
+            </map>
+        </div>
+        <script>
+            let close = document.querySelector("map#pop area");
+            close.onclick = (e) => {
+                let popup = document.querySelector('div#popup');
+                popup.style.display = 'none';
+                e.preventDefault();
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
